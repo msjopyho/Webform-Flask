@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
-
+app.config['SECRET_KEY'] = 'password' #protect against cross site request forgery
 
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
